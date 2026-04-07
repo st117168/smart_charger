@@ -49,17 +49,17 @@ if not exist "data\config.json" (
 )
 
 echo [INFO] Creating virtual environment...
-if not exist ".venv" (
-    python -m venv .venv
+if not exist ".venv_win" (
+    python -m venv .venv_win
 )
 
 echo [INFO] Installing dependencies...
-".venv\Scripts\python.exe" -m pip install --upgrade pip
-".venv\Scripts\python.exe" -m pip install tinytuya psutil pywin32 wmi
+".venv_win\Scripts\python.exe" -m pip install --upgrade pip
+".venv_win\Scripts\python.exe" -m pip install tinytuya psutil pywin32 wmi
 
 echo [INFO] Registering Task Scheduler...
 set "TASK_NAME=SmartChargerTask"
-set "PYTHONW=%PROJECT_DIR%\.venv\Scripts\python.exe"
+set "PYTHONW=%PROJECT_DIR%\.venv_win\Scripts\python.exe"
 set "MAIN_PY=%PROJECT_DIR%\__main__.py"
 
 :: Create a task (run from SYSTEM when PC starts)

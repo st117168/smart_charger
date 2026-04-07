@@ -16,8 +16,8 @@ echo "[INFO] Project directory: $PROJECT_DIR"
 echo "[INFO] Stopping and disabling service..."
 # Stop service and handle autostart logic via Python
 # We use python from venv if it exists, otherwise system python
-if [ -f ".venv/bin/python3" ]; then
-    ./.venv/bin/python3 "__main__.py" --no-autostart
+if [ -f ".venv_linux/bin/python3" ]; then
+    ./.venv_linux/bin/python3 "__main__.py" --no-autostart
 else
     python3 "__main__.py" --no-autostart
 fi
@@ -29,9 +29,9 @@ rm -f ~/.config/systemd/user/smart-charger.service 2>/dev/null
 systemctl --user daemon-reload
 
 echo "[INFO] Removing virtual environment..."
-if [ -d ".venv" ]; then
-    rm -rf .venv
-    echo "[INFO] .venv folder deleted."
+if [ -d ".venv_linux" ]; then
+    rm -rf .venv_linux
+    echo "[INFO] .venv_linux folder deleted."
 fi
 
 echo "[INFO] Cleaning up data and logs..."

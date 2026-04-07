@@ -1,6 +1,9 @@
 # settings
 config.json
 *.log
+# venv
+.venv_win/
+.venv_linux/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

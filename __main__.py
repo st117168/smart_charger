@@ -21,11 +21,11 @@ LOG_FILE = os.path.join(DATA_DIR, 'smart-charger.log')
 
 # Пути для виртуального окружения в зависимости от ОС
 if sys.platform == 'win32':
-    VENV_DIR = os.path.join(BASE_DIR, '.venv')
+    VENV_DIR = os.path.join(BASE_DIR, '.venv_win')
     VENV_PYTHON = os.path.join(VENV_DIR, 'Scripts', 'python.exe')
     VENV_PYTHONW = os.path.join(VENV_DIR, 'Scripts', 'pythonw.exe')
 else:  # Linux/macOS
-    VENV_DIR = os.path.join(BASE_DIR, '.venv')
+    VENV_DIR = os.path.join(BASE_DIR, '.venv_linux')
     VENV_PYTHON = os.path.join(VENV_DIR, 'bin', 'python')
     VENV_PYTHONW = VENV_PYTHON
 

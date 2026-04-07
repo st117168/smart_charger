@@ -14,9 +14,9 @@ cd "$PROJECT_DIR"
 echo "[INFO] Директория проекта: $PROJECT_DIR"
 
 # Проверяем наличие виртуального окружения
-if [ -f ".venv/bin/python" ]; then
+if [ -f ".venv_linux/bin/python" ]; then
     echo "[INFO] Запуск из виртуального окружения..."
-    .venv/bin/python "__main__.py"
+    .venv_linux/bin/python "__main__.py"
 else
     echo "[INFO] Виртуальное окружение не найдено, запуск из системного Python..."
     echo "[INFO] Рекомендуется сначала установить автозапуск: ./install.sh"
